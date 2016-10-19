@@ -17,23 +17,51 @@
       <guid>http://taoliu.me/post/first/</guid>
       <description>
 
-&lt;h3 id=&#34;hello-hugo&#34;&gt;Hello Hugo&lt;/h3&gt;
+&lt;h3 id=&#34;第一篇文章&#34;&gt;第一篇文章&lt;/h3&gt;
+
+&lt;hr /&gt;
 
 &lt;ol&gt;
 &lt;li&gt;aaa&lt;/li&gt;
 &lt;li&gt;bbb&lt;/li&gt;
 &lt;li&gt;ccc&lt;/li&gt;
+&lt;li&gt;aa&lt;br /&gt;
+&amp;mdash;
+图片 &lt;img src=&#34;http://images.cnitblog.com/blog/404392/201501/122257231047591.jpg&#34; alt=&#34;markdown&#34; /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>
     
     <item>
-      <title>about</title>
+      <title>About</title>
       <link>http://taoliu.me/about/</link>
       <pubDate>Fri, 14 Oct 2016 18:16:02 +0800</pubDate>
       
       <guid>http://taoliu.me/about/</guid>
-      <description>&lt;p&gt;hello&lt;/p&gt;
+      <description>
+
+&lt;h2 id=&#34;个人介绍&#34;&gt;个人介绍&lt;/h2&gt;
+
+&lt;p&gt;　　一个向大牛转变的小菜鸡&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;一个android开发程序员&lt;/li&gt;
+&lt;li&gt;首次开通博客练习一下&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;斜体测试　　&lt;em&gt;aaaa&lt;/em&gt;&lt;br /&gt;
+测试粗体　　&lt;strong&gt;粗体&lt;/strong&gt;&lt;br /&gt;
+&amp;gt;一级引用&lt;br /&gt;
+&amp;gt;&amp;gt;二级引用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public void testSum(int a,int b){
+  return a + b;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;博客地址&lt;a href=&#34;http://www.taoliu.me&#34; title=&#34;liutao&#34;&gt;liutao&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
