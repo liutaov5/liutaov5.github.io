@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Post-rsses on Liu Tao</title>
+    <link>http://taoliu.me/post/index.xml</link>
+    <description>Recent content in Post-rsses on Liu Tao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Oct 2016 18:16:39 +0800</lastBuildDate>
+    <atom:link href="http://taoliu.me/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>first</title>
+      <link>http://taoliu.me/post/first/</link>
+      <pubDate>Fri, 14 Oct 2016 18:16:39 +0800</pubDate>
+      
+      <guid>http://taoliu.me/post/first/</guid>
+      <description>
+
+&lt;h3 id=&#34;hello-hugo&#34;&gt;Hello Hugo&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;aaa&lt;/li&gt;
+&lt;li&gt;bbb&lt;/li&gt;
+&lt;li&gt;ccc&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
