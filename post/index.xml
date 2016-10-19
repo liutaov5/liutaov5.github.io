@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Post-rsses on Liu Tao</title>
-    <link>http://taoliu.me/post/index.xml</link>
+    <link>aseUrl=taoliu.me/post/index.xml</link>
     <description>Recent content in Post-rsses on Liu Tao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 14 Oct 2016 18:16:39 +0800</lastBuildDate>
-    <atom:link href="http://taoliu.me/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="aseUrl=taoliu.me/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>first</title>
-      <link>http://taoliu.me/post/first/</link>
+      <link>/aseUrl=taoliu.me/post/first/</link>
       <pubDate>Fri, 14 Oct 2016 18:16:39 +0800</pubDate>
       
-      <guid>http://taoliu.me/post/first/</guid>
+      <guid>/aseUrl=taoliu.me/post/first/</guid>
       <description>
 
 &lt;h3 id=&#34;第一篇文章&#34;&gt;第一篇文章&lt;/h3&gt;
