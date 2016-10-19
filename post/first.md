@@ -1,6 +1,5 @@
 +++
 title = "first"
-draft = true
 date = "2016-10-14T18:16:39+08:00"
 
 +++
