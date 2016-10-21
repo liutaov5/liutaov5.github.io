@@ -11,22 +11,37 @@
     <atom:link href="http://liutaov5.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>首发</title>
+      <title>滚动的会员进度条</title>
       <link>http://liutaov5.github.io/post/first/</link>
       <pubDate>Fri, 14 Oct 2016 18:16:39 +0800</pubDate>
       
       <guid>http://liutaov5.github.io/post/first/</guid>
       <description>
 
-&lt;h3 id=&#34;第一篇文章&#34;&gt;第一篇文章&lt;/h3&gt;
-
-&lt;hr /&gt;
+&lt;h2 id=&#34;实现思路&#34;&gt;实现思路&lt;/h2&gt;
 
 &lt;ol&gt;
-&lt;li&gt;aaa&lt;/li&gt;
-&lt;li&gt;bbb&lt;/li&gt;
-&lt;li&gt;ccc&lt;/li&gt;
-&lt;li&gt;aa&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;功能需求分析：
+
+&lt;ul&gt;
+&lt;li&gt;可以循环滚动，在中心位置的等级View需要进行放大以及一些其它处理；&lt;/li&gt;
+&lt;li&gt;有积分等级进度；&lt;/li&gt;
+&lt;li&gt;每个等级可以点击并快速滚动到中心位置，有相应的动画。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;难点分析：
+
+&lt;ul&gt;
+&lt;li&gt;判断当前哪个等级处在中心位置；&lt;/li&gt;
+&lt;li&gt;滚动过程中对处在中心位置的view进行相关处理；&lt;/li&gt;
+&lt;li&gt;点击view时将该view滚动到中心位置。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;技术要求：
+
+&lt;ul&gt;
+&lt;li&gt;计算view在屏幕中的实时位置；&lt;/li&gt;
+&lt;li&gt;对滚动进行监听；&lt;/li&gt;
+&lt;li&gt;计算每个view在屏幕的中的初始位置。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
@@ -72,7 +87,7 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;博客地址&lt;a href=&#34;http:taoliu.me&#34; title=&#34;liutao&#34;&gt;liutao&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;博客地址&lt;a href=&#34;http:www.taoliu.me&#34; title=&#34;liutao&#34;&gt;liutao&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

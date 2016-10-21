@@ -1,3 +1,13 @@
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86138821-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head prefix="og: http://ogp.me/ns#">
@@ -72,7 +82,7 @@
   
   <article>
   <header>
-    <h2><a href="http://liutaov5.github.io/post/first/">首发</a></h2>
+    <h2><a href="http://liutaov5.github.io/post/first/">滚动的会员进度条</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
         Posted on
@@ -83,8 +93,7 @@
     </div>
   </header>
   <div>
-     第一篇文章  aaa bbb ccc aa
-  图片 
+     实现思路  功能需求分析：  可以循环滚动，在中心位置的等级View需要进行放大以及一些其它处理； 有积分等级进度； 每个等级可以点击并快速滚动到中心位置，有相应的动画。  难点分析：  判断当前哪个等级处在中心位置； 滚动过程中对处在中心位置的view进行相关处理； 点击view时将该view滚动到中心位置。  技术要求：  计算view在屏幕中的实时位置； 对滚动进行监听； 计算每个view在屏幕的中的初始位置。   图片 
   </div>
   
 </article>
