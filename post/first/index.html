@@ -6,7 +6,7 @@
   <meta property="og:title" content=" 滚动的会员进度条 &middot;  Liu Tao" />
   
   <meta property="og:site_name" content="Liu Tao" />
-  <meta property="og:url" content="http://liutaov5.github.io/post/first/" />
+  <meta property="og:url" content="http://taoliu.me/post/first/" />
   
   
   <meta property="og:type" content="article" />
@@ -19,13 +19,13 @@
      滚动的会员进度条 &middot;  Liu Tao
   </title>
 
-  <link rel="stylesheet" href="http://liutaov5.github.io/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="http://liutaov5.github.io/css/main.css" />
-  <link rel="stylesheet" href="http://liutaov5.github.io/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="http://liutaov5.github.io/css/github.css" />
+  <link rel="stylesheet" href="http://taoliu.me/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://taoliu.me/css/main.css" />
+  <link rel="stylesheet" href="http://taoliu.me/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://taoliu.me/css/github.css" />
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
-  <link rel="shortcut icon" href="http://liutaov5.github.io/images/favicon.ico" />
-  <link rel="apple-touch-icon" href="http://liutaov5.github.io/images/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="http://taoliu.me/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://taoliu.me/images/apple-touch-icon.png" />
   
 </head>
 <script>
@@ -41,7 +41,7 @@
 <body>
     <header class="global-header"  style="background-image:url( /images/bg.jpg )">
     <section class="header-text">
-      <h1><a href="http://liutaov5.github.io/">Liu Tao</a></h1>
+      <h1><a href="http://taoliu.me/">Liu Tao</a></h1>
       
       <div class="tag-line">
         Short subtitle/tagline of your blog
@@ -68,7 +68,7 @@
 </div>
 
       
-      <a href="http://liutaov5.github.io/" class="btn-header btn-back hidden-xs">
+      <a href="http://taoliu.me/" class="btn-header btn-back hidden-xs">
         <i class="fa fa-angle-left" aria-hidden="true"></i>
         &nbsp;Home
       </a>
@@ -125,6 +125,56 @@
 
 <hr />
 
+<p>　　在android中可以通过horizontalView来实现滚动，但是系统方法并没有提供滚动的监听接口，所以我们需要实现的功能就是对horizontalView来进行滚动监听。我们可以通过自定义一个view来继承horizontalView在内部来实现监听。</p>
+
+<pre><code class="language-java">public boolean onTouchEvent(MotionEvent ev) {
+     switch (ev.getAction()) {
+         case MotionEvent.ACTION_MOVE:
+             this.scrollType = ScrollType.TOUCH_SCROLL;
+             scrollViewListener.onScrollChanged(scrollType);
+             //手指在上面移动的时候   取消滚动监听线程
+             mHandler.removeCallbacks(scrollRunnable);
+             break;
+         case MotionEvent.ACTION_UP:
+             //手指移动的时候
+             mHandler.post(scrollRunnable);
+             break;
+     }
+     return super.onTouchEvent(ev);
+ }
+</code></pre>
+
+<p>　　以上部分主要用来处理手指一直与屏幕接触时的事件，但是我们手指从屏幕上移除时view还会继续滚动一段时间，所以我们还需要继续处理</p>
+
+<pre><code class="language-java">private Runnable scrollRunnable = new Runnable() {
+     public void run() {
+         if (getScrollX() == currentX) {
+             //滚动停止  取消监听线程
+             scrollType = ScrollType.IDLE;
+             if (scrollViewListener != null) {
+                 scrollViewListener.onScrollChanged(scrollType);
+             }
+             mHandler.removeCallbacks(this);
+             return;
+         } else {
+             //手指离开屏幕    view还在滚动的时候
+             scrollType = ScrollType.FLING;
+             if (scrollViewListener != null) {
+                 scrollViewListener.onScrollChanged(scrollType);
+             }
+         }
+         currentX = getScrollX();
+         mHandler.postDelayed(this, scrollDealy);
+     }
+ };
+</code></pre>
+
+<hr />
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主要通过使用handler并且设置一个间隔时间来不断的循环判断当前滚动的距 离与上一次滚动的距离是否相同，只有相同的时候才证明滚动停止，也可以来做相应的处理了</p>
+
+<hr />
+
 <p>图片 <img src="http://images.cnitblog.com/blog/404392/201501/122257231047591.jpg" alt="markdown" /></p>
 
   </section>
@@ -166,10 +216,10 @@
     </section>
     <ul class="pager">
       
-      <li class="previous"><a href="http://liutaov5.github.io/about/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      <li class="previous"><a href="http://taoliu.me/about/"><span aria-hidden="true">&larr;</span> Older</a></li>
       
       
-      <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      <li class="next"><a href="http://taoliu.me/plan/">Newer <span aria-hidden="true">&rarr;</span></a></li>
       
     </ul>
   </footer>
@@ -202,7 +252,7 @@
 
   </footer>
 
-  <script src="http://liutaov5.github.io/js/highlight.pack.js"></script>
+  <script src="http://taoliu.me/js/highlight.pack.js"></script>
   <script>
     hljs.initHighlightingOnLoad();
   </script>

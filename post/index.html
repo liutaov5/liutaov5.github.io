@@ -6,7 +6,7 @@
   <meta property="og:title" content=" Posts &middot;  Liu Tao" />
   
   <meta property="og:site_name" content="Liu Tao" />
-  <meta property="og:url" content="http://liutaov5.github.io/post/" />
+  <meta property="og:url" content="http://taoliu.me/post/" />
   
   
   <meta property="og:type" content="website" />
@@ -16,13 +16,13 @@
      Posts &middot;  Liu Tao
   </title>
 
-  <link rel="stylesheet" href="http://liutaov5.github.io/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="http://liutaov5.github.io/css/main.css" />
-  <link rel="stylesheet" href="http://liutaov5.github.io/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="http://liutaov5.github.io/css/github.css" />
+  <link rel="stylesheet" href="http://taoliu.me/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://taoliu.me/css/main.css" />
+  <link rel="stylesheet" href="http://taoliu.me/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://taoliu.me/css/github.css" />
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
-  <link rel="shortcut icon" href="http://liutaov5.github.io/images/favicon.ico" />
-  <link rel="apple-touch-icon" href="http://liutaov5.github.io/images/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="http://taoliu.me/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://taoliu.me/images/apple-touch-icon.png" />
   
 </head>
 <script>
@@ -38,7 +38,7 @@
 <body>
     <header class="global-header"  style="background-image:url( /images/bg.jpg )">
     <section class="header-text">
-      <h1><a href="http://liutaov5.github.io/">Liu Tao</a></h1>
+      <h1><a href="http://taoliu.me/">Liu Tao</a></h1>
       
       <div class="tag-line">
         Short subtitle/tagline of your blog
@@ -65,13 +65,13 @@
 </div>
 
       
-      <a href="http://liutaov5.github.io/" class="btn-header btn-back hidden-xs">
+      <a href="http://taoliu.me/" class="btn-header btn-back hidden-xs">
         <i class="fa fa-angle-left" aria-hidden="true"></i>
         &nbsp;Home
       </a>
       
       
-      <a href="http://liutaov5.github.io/post/index.xml" class="btn-header btn-subscribe hidden-xs">
+      <a href="http://taoliu.me/post/index.xml" class="btn-header btn-subscribe hidden-xs">
         <i class="fa fa-rss" aria-hidden="true"></i>
         &nbsp;Subscribe
       </a>
@@ -86,7 +86,7 @@
   <hr/>
   <article>
   <header>
-    <h2><a href="http://liutaov5.github.io/post/first/">滚动的会员进度条</a></h2>
+    <h2><a href="http://taoliu.me/post/first/">滚动的会员进度条</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
         Posted on
@@ -97,8 +97,16 @@
     </div>
   </header>
   <div>
-     实现思路  功能需求分析：  可以循环滚动，在中心位置的等级View需要进行放大以及一些其它处理； 有积分等级进度； 每个等级可以点击并快速滚动到中心位置，有相应的动画。  难点分析：  判断当前哪个等级处在中心位置； 滚动过程中对处在中心位置的view进行相关处理； 点击view时将该view滚动到中心位置。  技术要求：  计算view在屏幕中的实时位置； 对滚动进行监听； 计算每个view在屏幕的中的初始位置。   图片 
+    实现思路  功能需求分析：  可以循环滚动，在中心位置的等级View需要进行放大以及一些其它处理； 有积分等级进度； 每个等级可以点击并快速滚动到中心位置，有相应的动画。  难点分析：  判断当前哪个等级处在中心位置； 滚动过程中对处在中心位置的view进行相关处理； 点击view时将该view滚动到中心位置。  技术要求：  计算view在屏幕中的实时位置； 对滚动进行监听； 计算每个view在屏幕的中的初始位置。   　在android中可以通过horizontalView来实现滚动，但是系统方法并没有提供滚动的监听接口，所以我们需要实现的功能就是对horizontalView来进行滚动监听。我们可以通过自定义一个view来继承horizontalView在内部来实现监听。
+public boolean onTouchEvent(MotionEvent ev) { switch (ev.getAction()) { case MotionEvent.ACTION_MOVE: this.scrollType = ScrollType.TOUCH_SCROLL; scrollViewListener.onScrollChanged(scrollType); //手指在上面移动的时候 取消滚动监听线程 mHandler.removeCallbacks(scrollRunnable); break; case MotionEvent.ACTION_UP: //手指移动的时候 mHandler.post(scrollRunnable); break; } return super.onTouchEvent(ev); }  　以上部分主要用来处理手指一直与屏幕接触时的事件，但是我们手指从屏幕上移除时view还会继续滚动一段时间，所以我们还需要继续处理
+private Runnable scrollRunnable = new Runnable() { public void run() { if (getScrollX() == currentX) { //滚动停止 取消监听线程 scrollType = ScrollType.
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://taoliu.me/post/first/">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -131,7 +139,7 @@
 
   </footer>
 
-  <script src="http://liutaov5.github.io/js/highlight.pack.js"></script>
+  <script src="http://taoliu.me/js/highlight.pack.js"></script>
   <script>
     hljs.initHighlightingOnLoad();
   </script>

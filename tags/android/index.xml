@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Liu Tao</title>
-    <link>http://liutaov5.github.io/tags/android/index.xml</link>
+    <link>http://taoliu.me/tags/android/index.xml</link>
     <description>Recent content on Liu Tao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>&amp;copy; LiuTao Blog 2016</copyright>
-    <atom:link href="http://liutaov5.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://taoliu.me/tags/android/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About</title>
-      <link>http://liutaov5.github.io/about/</link>
+      <link>http://taoliu.me/about/</link>
       <pubDate>Fri, 14 Oct 2016 18:16:02 +0800</pubDate>
       
-      <guid>http://liutaov5.github.io/about/</guid>
+      <guid>http://taoliu.me/about/</guid>
       <description>
 
 &lt;h2 id=&#34;个人介绍&#34;&gt;个人介绍&lt;/h2&gt;

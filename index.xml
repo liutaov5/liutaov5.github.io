@@ -2,20 +2,83 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Liu Tao</title>
-    <link>http://liutaov5.github.io/index.xml</link>
+    <link>http://taoliu.me/index.xml</link>
     <description>Recent content on Liu Tao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>&amp;copy; LiuTao Blog 2016</copyright>
-    <lastBuildDate>Fri, 14 Oct 2016 18:16:39 +0800</lastBuildDate>
-    <atom:link href="http://liutaov5.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Dec 2016 19:05:39 +0800</lastBuildDate>
+    <atom:link href="http://taoliu.me/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>小目标</title>
+      <link>http://taoliu.me/plan/</link>
+      <pubDate>Sun, 04 Dec 2016 19:05:39 +0800</pubDate>
+      
+      <guid>http://taoliu.me/plan/</guid>
+      <description>
+
+&lt;h3 id=&#34;小tips&#34;&gt;小Tips&lt;/h3&gt;
+
+&lt;p&gt;　　定的目标需要每天都看一下，这样才相对有效果，有新的需求可以随时更改。
+　　我的人生还很长，不需要急于一时，打好基础才是王道。&lt;/p&gt;
+
+&lt;h4 id=&#34;修身养性&#34;&gt;修身养性&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;最近身体较差，撸多了肾虚。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;首先戒撸一个月；&lt;/strong&gt;
+1. 室内训练&lt;br /&gt;
+  *  每天三组俯卧撑和仰卧起坐，每组20个俯卧撑和15个仰卧起坐，时间随意。
+2. 每天尽量12：30之前睡着，保持每天8小时的睡眠时间。&lt;/p&gt;
+
+&lt;h4 id=&#34;个人提升&#34;&gt;个人提升&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;专业学习
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;android&lt;/code&gt;方面的研究，要花时间了；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;设计模式&lt;/code&gt;研究；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;javascript&lt;/code&gt;方面的研究；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;linux&lt;/code&gt;入门研究；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;python&lt;/code&gt;入门，写个爬虫就好；&lt;/li&gt;
+&lt;li&gt;不能只研究android，要考虑一下全面发展了；&lt;/li&gt;
+&lt;li&gt;开始写博客，先从android开始，一周一篇；&lt;/li&gt;
+&lt;li&gt;开始经营自己的GitHub；&lt;/li&gt;
+&lt;li&gt;学习英语，最起码能看懂英文文章，基本的听说读写（最好可以试试雅思托福考试）；&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;财务知识
+
+&lt;ul&gt;
+&lt;li&gt;看&lt;code&gt;穷爸爸与富爸爸&lt;/code&gt;有感，还是需要研究一下的。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;养生健康
+
+&lt;ul&gt;
+&lt;li&gt;这方面的知识比较空白，有待了解；&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;冲向财务自由
+
+&lt;ul&gt;
+&lt;li&gt;可以试试投稿文章，例如自媒体，可以先申请个今日头条作者或者其它平台的作者都行；&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;找工作&#34;&gt;找工作&lt;/h3&gt;
+
+&lt;p&gt;即将失业了，好没有安全感。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>滚动的会员进度条</title>
-      <link>http://liutaov5.github.io/post/first/</link>
+      <link>http://taoliu.me/post/first/</link>
       <pubDate>Fri, 14 Oct 2016 18:16:39 +0800</pubDate>
       
-      <guid>http://liutaov5.github.io/post/first/</guid>
+      <guid>http://taoliu.me/post/first/</guid>
       <description>
 
 &lt;h2 id=&#34;实现思路&#34;&gt;实现思路&lt;/h2&gt;
@@ -46,16 +109,66 @@
 
 &lt;hr /&gt;
 
+&lt;p&gt;　　在android中可以通过horizontalView来实现滚动，但是系统方法并没有提供滚动的监听接口，所以我们需要实现的功能就是对horizontalView来进行滚动监听。我们可以通过自定义一个view来继承horizontalView在内部来实现监听。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public boolean onTouchEvent(MotionEvent ev) {
+     switch (ev.getAction()) {
+         case MotionEvent.ACTION_MOVE:
+             this.scrollType = ScrollType.TOUCH_SCROLL;
+             scrollViewListener.onScrollChanged(scrollType);
+             //手指在上面移动的时候   取消滚动监听线程
+             mHandler.removeCallbacks(scrollRunnable);
+             break;
+         case MotionEvent.ACTION_UP:
+             //手指移动的时候
+             mHandler.post(scrollRunnable);
+             break;
+     }
+     return super.onTouchEvent(ev);
+ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;　　以上部分主要用来处理手指一直与屏幕接触时的事件，但是我们手指从屏幕上移除时view还会继续滚动一段时间，所以我们还需要继续处理&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;private Runnable scrollRunnable = new Runnable() {
+     public void run() {
+         if (getScrollX() == currentX) {
+             //滚动停止  取消监听线程
+             scrollType = ScrollType.IDLE;
+             if (scrollViewListener != null) {
+                 scrollViewListener.onScrollChanged(scrollType);
+             }
+             mHandler.removeCallbacks(this);
+             return;
+         } else {
+             //手指离开屏幕    view还在滚动的时候
+             scrollType = ScrollType.FLING;
+             if (scrollViewListener != null) {
+                 scrollViewListener.onScrollChanged(scrollType);
+             }
+         }
+         currentX = getScrollX();
+         mHandler.postDelayed(this, scrollDealy);
+     }
+ };
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;主要通过使用handler并且设置一个间隔时间来不断的循环判断当前滚动的距 离与上一次滚动的距离是否相同，只有相同的时候才证明滚动停止，也可以来做相应的处理了&lt;/p&gt;
+
+&lt;hr /&gt;
+
 &lt;p&gt;图片 &lt;img src=&#34;http://images.cnitblog.com/blog/404392/201501/122257231047591.jpg&#34; alt=&#34;markdown&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>About</title>
-      <link>http://liutaov5.github.io/about/</link>
+      <link>http://taoliu.me/about/</link>
       <pubDate>Fri, 14 Oct 2016 18:16:02 +0800</pubDate>
       
-      <guid>http://liutaov5.github.io/about/</guid>
+      <guid>http://taoliu.me/about/</guid>
       <description>
 
 &lt;h2 id=&#34;个人介绍&#34;&gt;个人介绍&lt;/h2&gt;
@@ -89,6 +202,15 @@
 
 &lt;p&gt;博客地址&lt;a href=&#34;http:www.taoliu.me&#34; title=&#34;liutao&#34;&gt;liutao&lt;/a&gt;&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://taoliu.me/%E8%81%8C%E4%B8%9A%E5%8D%B1%E6%9C%BA/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://taoliu.me/%E8%81%8C%E4%B8%9A%E5%8D%B1%E6%9C%BA/</guid>
+      <description></description>
     </item>
     
   </channel>
