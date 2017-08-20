@@ -3,17 +3,17 @@
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <meta property="og:title" content=" Android &middot;  Liu Tao" />
+  <meta property="og:title" content=" Kotlin &middot;  Liu Tao" />
   
   <meta property="og:site_name" content="Liu Tao" />
-  <meta property="og:url" content="http://taoliu.me/tags/android/" />
+  <meta property="og:url" content="http://taoliu.me/tags/kotlin/" />
   
   
   <meta property="og:type" content="website" />
   
 
   <title>
-     Android &middot;  Liu Tao
+     Kotlin &middot;  Liu Tao
   </title>
 
   <link rel="stylesheet" href="http://taoliu.me/css/bootstrap.min.css" />
@@ -71,7 +71,7 @@
       </a>
       
       
-      <a href="http://taoliu.me/tags/android/index.xml" class="btn-header btn-subscribe hidden-xs">
+      <a href="http://taoliu.me/tags/kotlin/index.xml" class="btn-header btn-subscribe hidden-xs">
         <i class="fa fa-rss" aria-hidden="true"></i>
         &nbsp;Subscribe
       </a>
@@ -81,7 +81,7 @@
   <main class="container">
 
 <section class="article-list">
-  <h1>Android</h1>
+  <h1>Kotlin</h1>
   
   <hr/>
   <article>
@@ -119,86 +119,6 @@ item_image.xml文件中包含 &lt;ImageView android:id=&quot;@+id/iv_image&quot;
       <li class="next"><a href="http://taoliu.me/post/study_kotlin1/">Read more <span aria-hidden="true">&raquo;</span></a></li>
     </ul>
   </footer>
-  
-</article>
-
-  
-  <hr/>
-  <article>
-  <header>
-    <h2><a href="http://taoliu.me/post/android_problem/">遇到的问题</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2017-04-09T21:12:52&#43;08:00">
-          Apr 9, 2017
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-     android 6.0和7.0适配遇到的问题  android 6.0及时权限问题，在图片上传以及拍照时需要在代码中判断并处理权限相关的问题。 拍照后获取图片的URL以及系统选择图片获取图片的URL，由于7.0以后访问不同的应用的资源时需要特殊的处理，不能使用以前的方法直接获取URL，所以需要根据版本不同来做不同的处理。
-dataBinding的使用问题 出现dataBinding包找不到的问题，最后发现是build gradle plugin 版本不同造成的，所以以后一定要注意版本一致。
- android studio和gradle 版本不一致时会造成不能自动安装app的问题。
-  状态栏颜色的设置的问题  在android 5.0以后可以在style里设置相关属性进行设置 在android 4.4——5.0之间需要在styl里e设置状态栏透明属性以及在根布局设置相应的颜色。
-scrollview嵌套recycleview的问题 由于需要展示所有内容，所以需要recycleview 的高度根据内容自动调整，和listview有点不一样，需要对layoutmanager方法进行重写，主要是重写onmeasure方法，另外还需要设置两个关键的属性（忘了，后续再补充）。
-  微博分享  友盟微博分享只是分享图片会出现参数不完整的问题，所以需要加个text属性。  edittext改变键盘enter文字的问题  不仅要设置 忘了 属性，还要设置singleLine 为true这个属性才能改变  显示和隐藏键盘问题  后续补充&hellip;&hellip;  emoji表情乱码问题  应该要后台对编码格式进行处理。  
-  </div>
-  
-</article>
-
-  
-  <hr/>
-  <article>
-  <header>
-    <h2><a href="http://taoliu.me/post/scroll_progress_bar/">滚动的会员进度条</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2016-10-14T18:16:39&#43;08:00">
-          Oct 14, 2016
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    实现思路  功能需求分析：  可以循环滚动，在中心位置的等级View需要进行放大以及一些其它处理； 有积分等级进度； 每个等级可以点击并快速滚动到中心位置，有相应的动画。  难点分析：  判断当前哪个等级处在中心位置； 滚动过程中对处在中心位置的view进行相关处理； 点击view时将该view滚动到中心位置。  技术要求：  计算view在屏幕中的实时位置； 对滚动进行监听； 计算每个view在屏幕的中的初始位置。   　在android中可以通过horizontalView来实现滚动，但是系统方法并没有提供滚动的监听接口，所以我们需要实现的功能就是对horizontalView来进行滚动监听。我们可以通过自定义一个view来继承horizontalView在内部来实现监听。
-public boolean onTouchEvent(MotionEvent ev) { switch (ev.getAction()) { case MotionEvent.ACTION_MOVE: this.scrollType = ScrollType.TOUCH_SCROLL; scrollViewListener.onScrollChanged(scrollType); //手指在上面移动的时候 取消滚动监听线程 mHandler.removeCallbacks(scrollRunnable); break; case MotionEvent.ACTION_UP: //手指移动的时候 mHandler.post(scrollRunnable); break; } return super.onTouchEvent(ev); }  　以上部分主要用来处理手指一直与屏幕接触时的事件，但是我们手指从屏幕上移除时view还会继续滚动一段时间，所以我们还需要继续处理
-private Runnable scrollRunnable = new Runnable() { @Override public void run() { if (getScrollX() == currentX) { //滚动停止 取消监听线程 scrollType = ScrollType.
-  </div>
-  
-  <footer>
-    <ul class="pager">
-      <li class="next"><a href="http://taoliu.me/post/scroll_progress_bar/">Read more <span aria-hidden="true">&raquo;</span></a></li>
-    </ul>
-  </footer>
-  
-</article>
-
-  
-  <hr/>
-  <article>
-  <header>
-    <h2><a href="http://taoliu.me/post/about/">About</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2016-10-14T18:16:02&#43;08:00">
-          Oct 14, 2016
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    个人介绍 　一个向大牛转变的小菜鸡
- 一个android开发程序员 首次开通博客练习一下
-  斜体测试　aaaa
-测试粗体　粗体
- 一引用
- 二引用
-  end
-public void testSum(int a,int b){ return a + b; }  博客地址liutao
-  </div>
   
 </article>
 

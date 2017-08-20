@@ -1,28 +1,87 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://taoliu.me/</loc>
+    <loc>http://taoliu.me/post/study_kotlin1/</loc>
+    <lastmod>2017-08-13T21:41:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://taoliu.me/post/recent_plan/</loc>
+    <lastmod>2017-08-13T19:05:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://taoliu.me/post/android_problem/</loc>
+    <lastmod>2017-04-09T21:12:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://taoliu.me/post/career_difficulty/</loc>
+    <lastmod>2017-02-19T17:57:56+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://taoliu.me/post/plan/</loc>
     <lastmod>2016-12-04T19:05:39+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://taoliu.me/plan/</loc>
-    <lastmod>2016-12-04T19:05:39+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://taoliu.me/post/first/</loc>
+    <loc>http://taoliu.me/post/scroll_progress_bar/</loc>
     <lastmod>2016-10-14T18:16:39+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://taoliu.me/about/</loc>
+    <loc>http://taoliu.me/post/about/</loc>
     <lastmod>2016-10-14T18:16:02+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://taoliu.me/%E8%81%8C%E4%B8%9A%E5%8D%B1%E6%9C%BA/</loc>
+    <loc>http://taoliu.me/tags/android/</loc>
+    <lastmod>2017-08-13T21:41:36+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://taoliu.me/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://taoliu.me/tags/kotlin/</loc>
+    <lastmod>2017-08-13T21:41:36+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://taoliu.me/</loc>
+    <lastmod>2017-08-13T21:41:36+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://taoliu.me/tags/personal-life/</loc>
+    <lastmod>2017-02-19T17:57:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://taoliu.me/tags/plan/</loc>
+    <lastmod>2017-08-13T19:05:39+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://taoliu.me/post/</loc>
+    <lastmod>2017-08-13T21:41:36+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://taoliu.me/tags/</loc>
+    <lastmod>2017-08-13T21:41:36+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

@@ -2,215 +2,112 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Liu Tao</title>
-    <link>http://taoliu.me/index.xml</link>
+    <link>http://taoliu.me/</link>
     <description>Recent content on Liu Tao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>&amp;copy; LiuTao Blog 2016</copyright>
-    <lastBuildDate>Sun, 04 Dec 2016 19:05:39 +0800</lastBuildDate>
-    <atom:link href="http://taoliu.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Aug 2017 21:41:36 +0800</lastBuildDate>
+    
+	<atom:link href="http://taoliu.me/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>初探kotlin</title>
+      <link>http://taoliu.me/post/study_kotlin1/</link>
+      <pubDate>Sun, 13 Aug 2017 21:41:36 +0800</pubDate>
+      
+      <guid>http://taoliu.me/post/study_kotlin1/</guid>
+      <description>前言： 　前段时间Google宣布kotlin成为android开发官方语言，为了跟上时代的脚步，我最近也开始学习了下kotlin的使用，作为一名新手，只能讲讲自己在使用的学习的过程中遇到的问题以及自己的一些想法，纯属个人观点，如有错误请指出。
+kotlin官方指南
+kotlin基础  基础类型
+kotlin中的基础类型和java中没发现什么大的区别，主要使用方式有些不同。在kotlin中属性声明有两种：var和val。
+var是可变的，val是只读的，也就是说val相当于java中的常量，它们并不是具体的数据类型，可以根据后面的类型进行自动推导和转换，也可以直接声明为具体的类型。比如:
+ var a: Int val b: String  就是直接指定声明类型  var a=1 val b=&amp;quot;b&amp;quot;  就是自动转换确定类型
+以上声明的类型都是不可为空的，假如要声明一个可空的类型需要在后面加一个?，比如：var b: String=null 知道一些基础知识后我们可以尝试自己创建一个简单的android项目并使用kotlin来进行编写了，边写demo边学习会印象更深一些，遇到一些问题可以去官方文档查询。(后续继续补充) kotlin类
+一般来说，kotlin类的属性默认必须要进行初始化，这和java有些不同，如果你使用var a: Int作为类的属性，是会报错的，必须对它进行初始化。当然，如果你非要属性在特定的时候才需要初始化，那可以使用关键字lateinit来进行声明，比如lateinit var a: Int这样就没什么问题了。  在android中使用kotlin  使用kotlin创建android项目
+我使用的是android studio 3.0，3.0之后android studio内部集成了kotlin，我们在创建项目的时候选择使用kotlin就行了，会在gradle文件里面为我们自动配置，我们创建新的文件时只要选择kotlin然后再选择文件类型就可以了。之后我们就可以直接运行，看到我们最熟悉的hello world了。
+我们看一下系统自动生成的类文件，可以发现kotlin和java的一些区别，比如类的继承。在kotlin中继承是通过:来实现的，并且它要继承的类必须要加上构造方法，如果没有参数直接使使用()，有参数的话，都要加上(var param1:Any,var param2: Any...)，这点和java有些区别。
+ kotlin合成属性
+我们之前都是通过findViewById()来获取布局文件中的组件的，或者是使用第三方库的注解来实现，但在kotlin中我们可以很简单的获取到布局中的组件。在activity中我们在setContentView(id)之后我们可以通过组件的id来获取组件并且设置组件的一些属性
+&amp;lt;TextView android:id=&amp;quot;@+id/hello&amp;quot; android:layout_width=&amp;quot;fill_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:text=&amp;quot;Hello World, MyActivity&amp;quot; /&amp;gt;  我们可以在activity中直接使用hello.setText(&amp;quot;hello&amp;quot;)来操控TextView，它会自动导入import kotlinx.android.synthetic.main.$layout_name.*是不是要比以前简单了很多。
+同样我们也可以在fragment和adapter中使用，不过和在activity中有些区别，它们是通过View.id来获取组件的，比如：
+item_image.xml文件中包含 &amp;lt;ImageView android:id=&amp;quot;@+id/iv_image&amp;quot; android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:background=&amp;quot;@color/bg_grey&amp;quot; android:minHeight=&amp;quot;200dp&amp;quot; /&amp;gt; var itemView = LayoutInflater.</description>
+    </item>
+    
+    <item>
+      <title>近期计划</title>
+      <link>http://taoliu.me/post/recent_plan/</link>
+      <pubDate>Sun, 13 Aug 2017 19:05:39 +0800</pubDate>
+      
+      <guid>http://taoliu.me/post/recent_plan/</guid>
+      <description> 计划  使用kotlin完成一个小项目（大约两周） 根据抛物线博客学习android绘制基础（持续ing） 研究下热更新内容（花两天时间）
+(以上大约3周) 正则表达式学习 rxjava源码研究（主要学习要思想，还有搞懂observable observer subscribe） retroift源码研究（和rxjava一起） 每周末写一篇博客（不管内容是什么，一定得写 看下博客，研究下一些特效，最好自己独立写一个（不定期，例如bilibili首页上下滑动效果） python学习（闲散时间，以上内容搞定之后，完成一个简单的网站爬虫，大约2周内） 研究下javascript（待定，大约2周） 了解下react native（javascript 之后，大约2周）  额外研究  抓包工具的使用 http，tcp/ip，udp协议（抽空看看，了解一下） 设计模式（一些常见的研究一下） 具体分析下mvp,mvc,mvvm的区别和优劣（主要是mvc和mvp,能够完整的表达出来）  </description>
+    </item>
+    
+    <item>
+      <title>遇到的问题</title>
+      <link>http://taoliu.me/post/android_problem/</link>
+      <pubDate>Sun, 09 Apr 2017 21:12:52 +0800</pubDate>
+      
+      <guid>http://taoliu.me/post/android_problem/</guid>
+      <description> android 6.0和7.0适配遇到的问题  android 6.0及时权限问题，在图片上传以及拍照时需要在代码中判断并处理权限相关的问题。 拍照后获取图片的URL以及系统选择图片获取图片的URL，由于7.0以后访问不同的应用的资源时需要特殊的处理，不能使用以前的方法直接获取URL，所以需要根据版本不同来做不同的处理。
+dataBinding的使用问题 出现dataBinding包找不到的问题，最后发现是build gradle plugin 版本不同造成的，所以以后一定要注意版本一致。
+ android studio和gradle 版本不一致时会造成不能自动安装app的问题。
+  状态栏颜色的设置的问题  在android 5.0以后可以在style里设置相关属性进行设置 在android 4.4——5.0之间需要在styl里e设置状态栏透明属性以及在根布局设置相应的颜色。
+scrollview嵌套recycleview的问题 由于需要展示所有内容，所以需要recycleview 的高度根据内容自动调整，和listview有点不一样，需要对layoutmanager方法进行重写，主要是重写onmeasure方法，另外还需要设置两个关键的属性（忘了，后续再补充）。
+  微博分享  友盟微博分享只是分享图片会出现参数不完整的问题，所以需要加个text属性。  edittext改变键盘enter文字的问题  不仅要设置 忘了 属性，还要设置singleLine 为true这个属性才能改变  显示和隐藏键盘问题  后续补充&amp;hellip;&amp;hellip;  emoji表情乱码问题  应该要后台对编码格式进行处理。  </description>
+    </item>
+    
+    <item>
+      <title>职业危机</title>
+      <link>http://taoliu.me/post/career_difficulty/</link>
+      <pubDate>Sun, 19 Feb 2017 17:57:56 +0800</pubDate>
+      
+      <guid>http://taoliu.me/post/career_difficulty/</guid>
+      <description>离职危机 　在新公司浑浑噩噩度过了将近7个月，刚开始有项目在做，自己也进步了一些，接触了许多东西，不过由于最近两个月没什么需求，自己什么都没做，再加上自己没什么控制力，一直在做着与工作无关的东西，导致自己也没学到太多的东西。由于最近公司移动端业务发展不好，所以决定砍掉移动端业务，这也导致我要失去这份工作了。本来我是还有点自信的，认为凭借自己的能力还是很容易找到一份工作的，但是最近一周投了许多简历也只有一份面试，还不太好的那种，搞得我都有些烦躁了，虽然我依然认为我能够找到一份工作。主要是互联网行业面临寒冬，公司倒闭变多，裁员增加，找工作的人太多（由于入职互联网行业的门槛较低，加上大量的培训公司），导致经验较弱并且不是什么名校毕业的初级人员找工作较为困难。
+其实主要还是在于自己没什么竞争力，而且android开发初级人员开始饱和，但是还是要找到下一份工作好生存下去的，然后才是考虑后续的发展道路，或许会考虑向其它方向发展。而这次面临被裁员，自己心中第一次充满了满满的不安全感，以后的目标就是寻找一切办法让自己充满安全感！不过，我觉得人的一生总是会遇到各种各样的问题，所以我要做的就是解决他们。
+个人感想 　其实我感觉我还年轻，才不到23周岁，人生还有很多时间，但总觉得自己已经成人了，应该承担一部分责任了，这也导致我有些急功近利了，总是很急躁，觉得自己现在就应该找到一份很好的工作，认为自己的未来也应该一片光明，但是我却并没有付出些什么，总是自己一厢情愿的自以为是。归根结底还是要提高个人的能力，而这些东西不是短期能够见效的，而是一个长期积累的过程。所以控制好自己的心态，先脚踏实地学习技术，打好基础，在考虑以后的事情吧。找好下一个工作。加油!</description>
+    </item>
     
     <item>
       <title>小目标</title>
-      <link>http://taoliu.me/plan/</link>
+      <link>http://taoliu.me/post/plan/</link>
       <pubDate>Sun, 04 Dec 2016 19:05:39 +0800</pubDate>
       
-      <guid>http://taoliu.me/plan/</guid>
-      <description>
-
-&lt;h3 id=&#34;小tips&#34;&gt;小Tips&lt;/h3&gt;
-
-&lt;p&gt;　　定的目标需要每天都看一下，这样才相对有效果，有新的需求可以随时更改。
-　　我的人生还很长，不需要急于一时，打好基础才是王道。&lt;/p&gt;
-
-&lt;h4 id=&#34;修身养性&#34;&gt;修身养性&lt;/h4&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;最近身体较差，撸多了肾虚。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;首先戒撸一个月；&lt;/strong&gt;
-1. 室内训练&lt;br /&gt;
-  *  每天三组俯卧撑和仰卧起坐，每组20个俯卧撑和15个仰卧起坐，时间随意。
-2. 每天尽量12：30之前睡着，保持每天8小时的睡眠时间。&lt;/p&gt;
-
-&lt;h4 id=&#34;个人提升&#34;&gt;个人提升&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;专业学习
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;android&lt;/code&gt;方面的研究，要花时间了；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;设计模式&lt;/code&gt;研究；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;javascript&lt;/code&gt;方面的研究；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;linux&lt;/code&gt;入门研究；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;python&lt;/code&gt;入门，写个爬虫就好；&lt;/li&gt;
-&lt;li&gt;不能只研究android，要考虑一下全面发展了；&lt;/li&gt;
-&lt;li&gt;开始写博客，先从android开始，一周一篇；&lt;/li&gt;
-&lt;li&gt;开始经营自己的GitHub；&lt;/li&gt;
-&lt;li&gt;学习英语，最起码能看懂英文文章，基本的听说读写（最好可以试试雅思托福考试）；&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;财务知识
-
-&lt;ul&gt;
-&lt;li&gt;看&lt;code&gt;穷爸爸与富爸爸&lt;/code&gt;有感，还是需要研究一下的。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;养生健康
-
-&lt;ul&gt;
-&lt;li&gt;这方面的知识比较空白，有待了解；&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;冲向财务自由
-
-&lt;ul&gt;
-&lt;li&gt;可以试试投稿文章，例如自媒体，可以先申请个今日头条作者或者其它平台的作者都行；&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;找工作&#34;&gt;找工作&lt;/h3&gt;
-
-&lt;p&gt;即将失业了，好没有安全感。&lt;/p&gt;
-</description>
+      <guid>http://taoliu.me/post/plan/</guid>
+      <description>小Tips 　定的目标需要每天都看一下，这样才相对有效果，有新的需求可以随时更改。 我的人生还很长，不需要急于一时，打好基础才是王道。
+修身养性  最近身体较差，撸多了肾虚。
+ 首先戒撸一个月； 1. 室内训练
+* 每天三组俯卧撑和仰卧起坐，每组20个俯卧撑和15个仰卧起坐，时间随意。 2. 每天尽量12：30之前睡着，保持每天8小时的睡眠时间。
+个人提升  专业学习  android方面的研究，要花时间了； 设计模式研究； javascript方面的研究； linux入门研究； python入门，写个爬虫就好； 不能只研究android，要考虑一下全面发展了； 开始写博客，先从android开始，一周一篇； 开始经营自己的GitHub； 学习英语，最起码能看懂英文文章，基本的听说读写（最好可以试试雅思托福考试）；  财务知识  看穷爸爸与富爸爸有感，还是需要研究一下的。  养生健康  这方面的知识比较空白，有待了解；  冲向财务自由  可以试试投稿文章，例如自媒体，可以先申请个今日头条作者或者其它平台的作者都行；   找工作 即将失业了，好没有安全感。</description>
     </item>
     
     <item>
       <title>滚动的会员进度条</title>
-      <link>http://taoliu.me/post/first/</link>
+      <link>http://taoliu.me/post/scroll_progress_bar/</link>
       <pubDate>Fri, 14 Oct 2016 18:16:39 +0800</pubDate>
       
-      <guid>http://taoliu.me/post/first/</guid>
-      <description>
-
-&lt;h2 id=&#34;实现思路&#34;&gt;实现思路&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;功能需求分析：
-
-&lt;ul&gt;
-&lt;li&gt;可以循环滚动，在中心位置的等级View需要进行放大以及一些其它处理；&lt;/li&gt;
-&lt;li&gt;有积分等级进度；&lt;/li&gt;
-&lt;li&gt;每个等级可以点击并快速滚动到中心位置，有相应的动画。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;难点分析：
-
-&lt;ul&gt;
-&lt;li&gt;判断当前哪个等级处在中心位置；&lt;/li&gt;
-&lt;li&gt;滚动过程中对处在中心位置的view进行相关处理；&lt;/li&gt;
-&lt;li&gt;点击view时将该view滚动到中心位置。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;技术要求：
-
-&lt;ul&gt;
-&lt;li&gt;计算view在屏幕中的实时位置；&lt;/li&gt;
-&lt;li&gt;对滚动进行监听；&lt;/li&gt;
-&lt;li&gt;计算每个view在屏幕的中的初始位置。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;　　在android中可以通过horizontalView来实现滚动，但是系统方法并没有提供滚动的监听接口，所以我们需要实现的功能就是对horizontalView来进行滚动监听。我们可以通过自定义一个view来继承horizontalView在内部来实现监听。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public boolean onTouchEvent(MotionEvent ev) {
-     switch (ev.getAction()) {
-         case MotionEvent.ACTION_MOVE:
-             this.scrollType = ScrollType.TOUCH_SCROLL;
-             scrollViewListener.onScrollChanged(scrollType);
-             //手指在上面移动的时候   取消滚动监听线程
-             mHandler.removeCallbacks(scrollRunnable);
-             break;
-         case MotionEvent.ACTION_UP:
-             //手指移动的时候
-             mHandler.post(scrollRunnable);
-             break;
-     }
-     return super.onTouchEvent(ev);
- }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;　　以上部分主要用来处理手指一直与屏幕接触时的事件，但是我们手指从屏幕上移除时view还会继续滚动一段时间，所以我们还需要继续处理&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;private Runnable scrollRunnable = new Runnable() {
-     public void run() {
-         if (getScrollX() == currentX) {
-             //滚动停止  取消监听线程
-             scrollType = ScrollType.IDLE;
-             if (scrollViewListener != null) {
-                 scrollViewListener.onScrollChanged(scrollType);
-             }
-             mHandler.removeCallbacks(this);
-             return;
-         } else {
-             //手指离开屏幕    view还在滚动的时候
-             scrollType = ScrollType.FLING;
-             if (scrollViewListener != null) {
-                 scrollViewListener.onScrollChanged(scrollType);
-             }
-         }
-         currentX = getScrollX();
-         mHandler.postDelayed(this, scrollDealy);
-     }
- };
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;主要通过使用handler并且设置一个间隔时间来不断的循环判断当前滚动的距 离与上一次滚动的距离是否相同，只有相同的时候才证明滚动停止，也可以来做相应的处理了&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;图片 &lt;img src=&#34;http://images.cnitblog.com/blog/404392/201501/122257231047591.jpg&#34; alt=&#34;markdown&#34; /&gt;&lt;/p&gt;
-</description>
+      <guid>http://taoliu.me/post/scroll_progress_bar/</guid>
+      <description>实现思路  功能需求分析：  可以循环滚动，在中心位置的等级View需要进行放大以及一些其它处理； 有积分等级进度； 每个等级可以点击并快速滚动到中心位置，有相应的动画。  难点分析：  判断当前哪个等级处在中心位置； 滚动过程中对处在中心位置的view进行相关处理； 点击view时将该view滚动到中心位置。  技术要求：  计算view在屏幕中的实时位置； 对滚动进行监听； 计算每个view在屏幕的中的初始位置。   　在android中可以通过horizontalView来实现滚动，但是系统方法并没有提供滚动的监听接口，所以我们需要实现的功能就是对horizontalView来进行滚动监听。我们可以通过自定义一个view来继承horizontalView在内部来实现监听。
+public boolean onTouchEvent(MotionEvent ev) { switch (ev.getAction()) { case MotionEvent.ACTION_MOVE: this.scrollType = ScrollType.TOUCH_SCROLL; scrollViewListener.onScrollChanged(scrollType); //手指在上面移动的时候 取消滚动监听线程 mHandler.removeCallbacks(scrollRunnable); break; case MotionEvent.ACTION_UP: //手指移动的时候 mHandler.post(scrollRunnable); break; } return super.onTouchEvent(ev); }  　以上部分主要用来处理手指一直与屏幕接触时的事件，但是我们手指从屏幕上移除时view还会继续滚动一段时间，所以我们还需要继续处理
+private Runnable scrollRunnable = new Runnable() { @Override public void run() { if (getScrollX() == currentX) { //滚动停止 取消监听线程 scrollType = ScrollType.</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>http://taoliu.me/about/</link>
+      <link>http://taoliu.me/post/about/</link>
       <pubDate>Fri, 14 Oct 2016 18:16:02 +0800</pubDate>
       
-      <guid>http://taoliu.me/about/</guid>
-      <description>
-
-&lt;h2 id=&#34;个人介绍&#34;&gt;个人介绍&lt;/h2&gt;
-
-&lt;p&gt;　　一个向大牛转变的小菜鸡&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;一个android开发程序员&lt;/li&gt;
-&lt;li&gt;首次开通博客练习一下&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;斜体测试　　&lt;em&gt;aaaa&lt;/em&gt;&lt;br /&gt;
-测试粗体　　&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;一引用&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;二引用&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;code&gt;end&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public void testSum(int a,int b){
-  return a + b;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;博客地址&lt;a href=&#34;http:www.taoliu.me&#34; title=&#34;liutao&#34;&gt;liutao&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://taoliu.me/%E8%81%8C%E4%B8%9A%E5%8D%B1%E6%9C%BA/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://taoliu.me/%E8%81%8C%E4%B8%9A%E5%8D%B1%E6%9C%BA/</guid>
-      <description></description>
+      <guid>http://taoliu.me/post/about/</guid>
+      <description>个人介绍 　一个向大牛转变的小菜鸡
+ 一个android开发程序员 首次开通博客练习一下
+  斜体测试　aaaa
+测试粗体　粗体
+ 一引用
+ 二引用
+  end
+public void testSum(int a,int b){ return a + b; }  博客地址liutao</description>
     </item>
     
   </channel>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Plan on Liu Tao</title>
+    <link>http://taoliu.me/tags/plan/</link>
+    <description>Recent content in Plan on Liu Tao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>&amp;copy; LiuTao Blog 2016</copyright>
+    <lastBuildDate>Sun, 13 Aug 2017 19:05:39 +0800</lastBuildDate>
+    
+	<atom:link href="http://taoliu.me/tags/plan/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>近期计划</title>
+      <link>http://taoliu.me/post/recent_plan/</link>
+      <pubDate>Sun, 13 Aug 2017 19:05:39 +0800</pubDate>
+      
+      <guid>http://taoliu.me/post/recent_plan/</guid>
+      <description> 计划  使用kotlin完成一个小项目（大约两周） 根据抛物线博客学习android绘制基础（持续ing） 研究下热更新内容（花两天时间）
+(以上大约3周) 正则表达式学习 rxjava源码研究（主要学习要思想，还有搞懂observable observer subscribe） retroift源码研究（和rxjava一起） 每周末写一篇博客（不管内容是什么，一定得写 看下博客，研究下一些特效，最好自己独立写一个（不定期，例如bilibili首页上下滑动效果） python学习（闲散时间，以上内容搞定之后，完成一个简单的网站爬虫，大约2周内） 研究下javascript（待定，大约2周） 了解下react native（javascript 之后，大约2周）  额外研究  抓包工具的使用 http，tcp/ip，udp协议（抽空看看，了解一下） 设计模式（一些常见的研究一下） 具体分析下mvp,mvc,mvvm的区别和优劣（主要是mvc和mvp,能够完整的表达出来）  </description>
+    </item>
+    
+    <item>
+      <title>小目标</title>
+      <link>http://taoliu.me/post/plan/</link>
+      <pubDate>Sun, 04 Dec 2016 19:05:39 +0800</pubDate>
+      
+      <guid>http://taoliu.me/post/plan/</guid>
+      <description>小Tips 　定的目标需要每天都看一下，这样才相对有效果，有新的需求可以随时更改。 我的人生还很长，不需要急于一时，打好基础才是王道。
+修身养性  最近身体较差，撸多了肾虚。
+ 首先戒撸一个月； 1. 室内训练
+* 每天三组俯卧撑和仰卧起坐，每组20个俯卧撑和15个仰卧起坐，时间随意。 2. 每天尽量12：30之前睡着，保持每天8小时的睡眠时间。
+个人提升  专业学习  android方面的研究，要花时间了； 设计模式研究； javascript方面的研究； linux入门研究； python入门，写个爬虫就好； 不能只研究android，要考虑一下全面发展了； 开始写博客，先从android开始，一周一篇； 开始经营自己的GitHub； 学习英语，最起码能看懂英文文章，基本的听说读写（最好可以试试雅思托福考试）；  财务知识  看穷爸爸与富爸爸有感，还是需要研究一下的。  养生健康  这方面的知识比较空白，有待了解；  冲向财务自由  可以试试投稿文章，例如自媒体，可以先申请个今日头条作者或者其它平台的作者都行；   找工作 即将失业了，好没有安全感。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Liu Tao</title>
+    <link>http://taoliu.me/tags/</link>
+    <description>Recent content in Tags on Liu Tao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>&amp;copy; LiuTao Blog 2016</copyright>
+    <lastBuildDate>Sun, 13 Aug 2017 21:41:36 +0800</lastBuildDate>
+    
+	<atom:link href="http://taoliu.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android</title>
+      <link>http://taoliu.me/tags/android/</link>
+      <pubDate>Sun, 13 Aug 2017 21:41:36 +0800</pubDate>
+      
+      <guid>http://taoliu.me/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kotlin</title>
+      <link>http://taoliu.me/tags/kotlin/</link>
+      <pubDate>Sun, 13 Aug 2017 21:41:36 +0800</pubDate>
+      
+      <guid>http://taoliu.me/tags/kotlin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Personal Life</title>
+      <link>http://taoliu.me/tags/personal-life/</link>
+      <pubDate>Sun, 19 Feb 2017 17:57:56 +0800</pubDate>
+      
+      <guid>http://taoliu.me/tags/personal-life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Plan</title>
+      <link>http://taoliu.me/tags/plan/</link>
+      <pubDate>Sun, 13 Aug 2017 19:05:39 +0800</pubDate>
+      
+      <guid>http://taoliu.me/tags/plan/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

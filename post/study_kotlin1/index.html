@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" 初探kotlin &middot;  Liu Tao" />
+  
+  <meta property="og:site_name" content="Liu Tao" />
+  <meta property="og:url" content="http://taoliu.me/post/study_kotlin1/" />
+  
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:published_time" content="2017-08-13T21:41:36&#43;08:00" />
+  
+  <meta property="og:article:tag" content="android" />
+  
+  <meta property="og:article:tag" content="kotlin" />
+  
+  
+
+  <title>
+     初探kotlin &middot;  Liu Tao
+  </title>
+
+  <link rel="stylesheet" href="http://taoliu.me/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://taoliu.me/css/main.css" />
+  <link rel="stylesheet" href="http://taoliu.me/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://taoliu.me/css/github.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
+  <link rel="shortcut icon" href="http://taoliu.me/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://taoliu.me/images/apple-touch-icon.png" />
+  
+</head>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86138821-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<body>
+    <header class="global-header"  style="background-image:url( /images/bg.jpg )">
+    <section class="header-text">
+      <h1><a href="http://taoliu.me/">Liu Tao</a></h1>
+      
+      <div class="tag-line">
+        Short subtitle/tagline of your blog
+      </div>
+      
+      <div class="sns-links hidden-print">
+  
+  <a href="mailto:1032573317@qq.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+  <a href="https://github.com/liutaov5" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  
+</div>
+
+      
+      <a href="http://taoliu.me/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        &nbsp;Home
+      </a>
+      
+      
+    </section>
+  </header>
+  <main class="container">
+
+
+<article>
+  <header>
+    <h1 class="text-primary">初探kotlin</h1>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2017-08-13T21:41:36&#43;08:00">
+          Aug 13, 2017
+        </time>
+      </div>
+      <div class="pull-right">
+        
+        <span class="post-tag small"><a href="http://taoliu.me//tags/android">#android</a></span>
+        
+        <span class="post-tag small"><a href="http://taoliu.me//tags/kotlin">#kotlin</a></span>
+        
+      </div>
+    </div>
+  </header>
+  <section>
+    
+
+<h3 id="前言">前言：</h3>
+
+<p>　　前段时间Google宣布kotlin成为android开发官方语言，为了跟上时代的脚步，我最近也开始学习了下kotlin的使用，作为一名新手，只能讲讲自己在使用的学习的过程中遇到的问题以及自己的一些想法，纯属个人观点，如有错误请指出。</p>
+
+<p><a href="https://www.kotlincn.net/docs/reference/">kotlin官方指南</a></p>
+
+<hr />
+
+<h3 id="kotlin基础">kotlin基础</h3>
+
+<ol>
+<li>基础类型<br />
+　　kotlin中的基础类型和java中没发现什么大的区别，主要使用方式有些不同。在kotlin中属性声明有两种：var和val。<br />
+var是可变的，val是只读的，也就是说val相当于java中的常量，它们并不是具体的数据类型，可以根据后面的类型进行自动推导和转换，也可以直接声明为具体的类型。比如:<br />
+<code>
+var a: Int        
+val b: String
+</code>
+就是直接指定声明类型
+<code>
+var a=1
+val b=&quot;b&quot;
+</code>
+就是自动转换确定类型<br />
+　　以上声明的类型都是不可为空的，假如要声明一个可空的类型需要在后面加一个<code>?</code>，比如：<code>var b: String=null</code> 知道一些基础知识后我们可以尝试自己创建一个简单的android项目并使用kotlin来进行编写了，边写demo边学习会印象更深一些，遇到一些问题可以去官方文档查询。(后续继续补充)</li>
+<li>kotlin类<br />
+　　一般来说，kotlin类的属性默认必须要进行初始化，这和java有些不同，如果你使用<code>var a: Int</code>作为类的属性，是会报错的，必须对它进行初始化。当然，如果你非要属性在特定的时候才需要初始化，那可以使用关键字<code>lateinit</code>来进行声明，比如<code>lateinit var a: Int</code>这样就没什么问题了。</li>
+</ol>
+
+<h3 id="在android中使用kotlin">在android中使用kotlin</h3>
+
+<ol>
+<li><p>使用kotlin创建android项目<br />
+　　我使用的是android studio 3.0，3.0之后android studio内部集成了kotlin，我们在创建项目的时候选择使用kotlin就行了，会在gradle文件里面为我们自动配置，我们创建新的文件时只要选择kotlin然后再选择文件类型就可以了。之后我们就可以直接运行，看到我们最熟悉的hello world了。<br />
+　　我们看一下系统自动生成的类文件，可以发现kotlin和java的一些区别，比如类的继承。在kotlin中继承是通过<code>:</code>来实现的，并且它要继承的类必须要加上构造方法，如果没有参数直接使使用<code>()</code>，有参数的话，都要加上<code>(var param1:Any,var param2: Any...)</code>，这点和java有些区别。</p></li>
+
+<li><p>kotlin合成属性<br />
+　　我们之前都是通过findViewById()来获取布局文件中的组件的，或者是使用第三方库的注解来实现，但在kotlin中我们可以很简单的获取到布局中的组件。在activity中我们在setContentView(id)之后我们可以通过组件的id来获取组件并且设置组件的一些属性</p>
+
+<pre><code>&lt;TextView
+    android:id=&quot;@+id/hello&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;Hello World, MyActivity&quot;
+    /&gt;
+</code></pre>
+
+<p>我们可以在activity中直接使用<code>hello.setText(&quot;hello&quot;)</code>来操控TextView，它会自动导入<code>import kotlinx.android.synthetic.main.$layout_name.*</code>是不是要比以前简单了很多。<br />
+　　同样我们也可以在fragment和adapter中使用，不过和在activity中有些区别，它们是通过<code>View.id</code>来获取组件的，比如：</p>
+
+<pre><code>item_image.xml文件中包含
+&lt;ImageView
+    android:id=&quot;@+id/iv_image&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:background=&quot;@color/bg_grey&quot;
+    android:minHeight=&quot;200dp&quot; /&gt; 
+var itemView = LayoutInflater.from(context).inflate(R.layout.item_image, parent, false)
+var image = itemView.iv_image
+</code></pre>
+
+<p>通过以上方式可以获取到相应的组件。</p></li>
+</ol>
+
+  </section>
+  <footer>
+    
+    <hr/>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'liutao';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <section class="author-info row">
+      <div class="author-avatar col-md-2">
+        
+      </div>
+      <div class="author-meta col-md-6">
+        
+        <h1 class="author-name text-primary">LiuTao  
+ a</h1>
+        
+        
+        <div class="author-bio">Your short bio</div>
+        
+      </div>
+      
+      <div class="author-contact col-md-4">
+        <a href="mailto:1032573317@qq.com">
+          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          &nbsp;Contact me
+        </a>
+      </div>
+      
+    </section>
+    <ul class="pager">
+      
+      <li class="previous"><a href="http://taoliu.me/post/recent_plan/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      
+      
+      <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+  </main>
+  <footer class="container global-footer">
+    <div class="copyright-note pull-left">
+      &copy; LiuTao Blog 2016
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="mailto:1032573317@qq.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+  <a href="https://github.com/liutaov5" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <script src="http://taoliu.me/js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  
+</body>
+</html>
+

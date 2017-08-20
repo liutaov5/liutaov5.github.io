@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kotlin on Liu Tao</title>
+    <link>http://taoliu.me/tags/kotlin/</link>
+    <description>Recent content in Kotlin on Liu Tao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>&amp;copy; LiuTao Blog 2016</copyright>
+    <lastBuildDate>Sun, 13 Aug 2017 21:41:36 +0800</lastBuildDate>
+    
+	<atom:link href="http://taoliu.me/tags/kotlin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>初探kotlin</title>
+      <link>http://taoliu.me/post/study_kotlin1/</link>
+      <pubDate>Sun, 13 Aug 2017 21:41:36 +0800</pubDate>
+      
+      <guid>http://taoliu.me/post/study_kotlin1/</guid>
+      <description>前言： 　前段时间Google宣布kotlin成为android开发官方语言，为了跟上时代的脚步，我最近也开始学习了下kotlin的使用，作为一名新手，只能讲讲自己在使用的学习的过程中遇到的问题以及自己的一些想法，纯属个人观点，如有错误请指出。
+kotlin官方指南
+kotlin基础  基础类型
+kotlin中的基础类型和java中没发现什么大的区别，主要使用方式有些不同。在kotlin中属性声明有两种：var和val。
+var是可变的，val是只读的，也就是说val相当于java中的常量，它们并不是具体的数据类型，可以根据后面的类型进行自动推导和转换，也可以直接声明为具体的类型。比如:
+ var a: Int val b: String  就是直接指定声明类型  var a=1 val b=&amp;quot;b&amp;quot;  就是自动转换确定类型
+以上声明的类型都是不可为空的，假如要声明一个可空的类型需要在后面加一个?，比如：var b: String=null 知道一些基础知识后我们可以尝试自己创建一个简单的android项目并使用kotlin来进行编写了，边写demo边学习会印象更深一些，遇到一些问题可以去官方文档查询。(后续继续补充) kotlin类
+一般来说，kotlin类的属性默认必须要进行初始化，这和java有些不同，如果你使用var a: Int作为类的属性，是会报错的，必须对它进行初始化。当然，如果你非要属性在特定的时候才需要初始化，那可以使用关键字lateinit来进行声明，比如lateinit var a: Int这样就没什么问题了。  在android中使用kotlin  使用kotlin创建android项目
+我使用的是android studio 3.0，3.0之后android studio内部集成了kotlin，我们在创建项目的时候选择使用kotlin就行了，会在gradle文件里面为我们自动配置，我们创建新的文件时只要选择kotlin然后再选择文件类型就可以了。之后我们就可以直接运行，看到我们最熟悉的hello world了。
+我们看一下系统自动生成的类文件，可以发现kotlin和java的一些区别，比如类的继承。在kotlin中继承是通过:来实现的，并且它要继承的类必须要加上构造方法，如果没有参数直接使使用()，有参数的话，都要加上(var param1:Any,var param2: Any...)，这点和java有些区别。
+ kotlin合成属性
+我们之前都是通过findViewById()来获取布局文件中的组件的，或者是使用第三方库的注解来实现，但在kotlin中我们可以很简单的获取到布局中的组件。在activity中我们在setContentView(id)之后我们可以通过组件的id来获取组件并且设置组件的一些属性
+&amp;lt;TextView android:id=&amp;quot;@+id/hello&amp;quot; android:layout_width=&amp;quot;fill_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:text=&amp;quot;Hello World, MyActivity&amp;quot; /&amp;gt;  我们可以在activity中直接使用hello.setText(&amp;quot;hello&amp;quot;)来操控TextView，它会自动导入import kotlinx.android.synthetic.main.$layout_name.*是不是要比以前简单了很多。
+同样我们也可以在fragment和adapter中使用，不过和在activity中有些区别，它们是通过View.id来获取组件的，比如：
+item_image.xml文件中包含 &amp;lt;ImageView android:id=&amp;quot;@+id/iv_image&amp;quot; android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:background=&amp;quot;@color/bg_grey&amp;quot; android:minHeight=&amp;quot;200dp&amp;quot; /&amp;gt; var itemView = LayoutInflater.</description>
+    </item>
+    
+  </channel>
+</rss>

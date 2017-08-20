@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" 遇到的问题 &middot;  Liu Tao" />
+  
+  <meta property="og:site_name" content="Liu Tao" />
+  <meta property="og:url" content="http://taoliu.me/post/%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" />
+  
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:published_time" content="2017-04-09T21:12:52&#43;08:00" />
+  
+  <meta property="og:article:tag" content="android" />
+  
+  
+
+  <title>
+     遇到的问题 &middot;  Liu Tao
+  </title>
+
+  <link rel="stylesheet" href="http://taoliu.me/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://taoliu.me/css/main.css" />
+  <link rel="stylesheet" href="http://taoliu.me/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://taoliu.me/css/github.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
+  <link rel="shortcut icon" href="http://taoliu.me/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://taoliu.me/images/apple-touch-icon.png" />
+  
+</head>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86138821-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<body>
+    <header class="global-header"  style="background-image:url( /images/bg.jpg )">
+    <section class="header-text">
+      <h1><a href="http://taoliu.me/">Liu Tao</a></h1>
+      
+      <div class="tag-line">
+        Short subtitle/tagline of your blog
+      </div>
+      
+      <div class="sns-links hidden-print">
+  
+  <a href="mailto:1032573317@qq.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+  <a href="https://github.com/liutaov5" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  
+</div>
+
+      
+      <a href="http://taoliu.me/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        &nbsp;Home
+      </a>
+      
+      
+    </section>
+  </header>
+  <main class="container">
+
+
+<article>
+  <header>
+    <h1 class="text-primary">遇到的问题</h1>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2017-04-09T21:12:52&#43;08:00">
+          Apr 9, 2017
+        </time>
+      </div>
+      <div class="pull-right">
+        
+        <span class="post-tag small"><a href="http://taoliu.me//tags/android">#android</a></span>
+        
+      </div>
+    </div>
+  </header>
+  <section>
+    
+
+<h4 id="android-6-0和7-0适配遇到的问题">android 6.0和7.0适配遇到的问题</h4>
+
+<ol>
+<li>android 6.0及时权限问题，在图片上传以及拍照时需要在代码中判断并处理权限相关的问题。</li>
+
+<li><p>拍照后获取图片的URL以及系统选择图片获取图片的URL，由于7.0以后访问不同的应用的资源时需要特殊的处理，不能使用以前的方法直接获取URL，所以需要根据版本不同来做不同的处理。</p>
+
+<h4 id="databinding的使用问题">dataBinding的使用问题</h4></li>
+
+<li><p>出现dataBinding包找不到的问题，最后发现是build gradle plugin 版本不同造成的，所以以后一定要注意版本一致。</p></li>
+
+<li><p>android studio和gradle 版本不一致时会造成不能自动安装app的问题。</p></li>
+</ol>
+
+<h4 id="状态栏颜色的设置的问题">状态栏颜色的设置的问题</h4>
+
+<ol>
+<li>在android 5.0以后可以在style里设置相关属性进行设置</li>
+
+<li><p>在android 4.4——5.0之间需要在styl里e设置状态栏透明属性以及在根布局设置相应的颜色。</p>
+
+<h4 id="scrollview嵌套recycleview的问题">scrollview嵌套recycleview的问题</h4></li>
+
+<li><p>由于需要展示所有内容，所以需要recycleview 的高度根据内容自动调整，和listview有点不一样，需要对layoutmanager方法进行重写，主要是重写onmeasure方法，另外还需要设置两个关键的属性<code>（忘了，后续再补充）</code>。</p></li>
+</ol>
+
+<h4 id="微博分享">微博分享</h4>
+
+<ol>
+<li>友盟微博分享只是分享图片会出现参数不完整的问题，所以需要加个text属性。</li>
+</ol>
+
+<h4 id="edittext改变键盘enter文字的问题">edittext改变键盘enter文字的问题</h4>
+
+<ol>
+<li>不仅要设置 <strong>忘了</strong> 属性，还要设置singleLine 为true这个属性才能改变</li>
+</ol>
+
+<h4 id="显示和隐藏键盘问题">显示和隐藏键盘问题</h4>
+
+<ol>
+<li>后续补充&hellip;&hellip;</li>
+</ol>
+
+<h4 id="emoji表情乱码问题">emoji表情乱码问题</h4>
+
+<ol>
+<li>应该要后台对编码格式进行处理。</li>
+</ol>
+
+  </section>
+  <footer>
+    
+    <hr/>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'liutao';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <section class="author-info row">
+      <div class="author-avatar col-md-2">
+        
+      </div>
+      <div class="author-meta col-md-6">
+        
+        <h1 class="author-name text-primary">LiuTao  
+ a</h1>
+        
+        
+        <div class="author-bio">Your short bio</div>
+        
+      </div>
+      
+      <div class="author-contact col-md-4">
+        <a href="mailto:1032573317@qq.com">
+          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          &nbsp;Contact me
+        </a>
+      </div>
+      
+    </section>
+    <ul class="pager">
+      
+      <li class="previous"><a href="http://taoliu.me/post/%E8%81%8C%E4%B8%9A%E5%8D%B1%E6%9C%BA/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      
+      
+      <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+  </main>
+  <footer class="container global-footer">
+    <div class="copyright-note pull-left">
+      &copy; LiuTao Blog 2016
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="mailto:1032573317@qq.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+  <a href="https://github.com/liutaov5" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <script src="http://taoliu.me/js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  
+</body>
+</html>
+
